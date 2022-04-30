@@ -24,7 +24,6 @@ div#main {
 div#top {
     display: flex;
     flex: 1;
-    height: 10vh;
     justify-content: space-between;
     align-items: center;
     background-color:#21283a;
@@ -33,7 +32,7 @@ div#top {
 }
 
 img#logo {
-    height: 50px;
+    height: 30px;
 }
 
 div#bottom {
@@ -100,4 +99,8 @@ button#sortear_button {
 .big {
     font-size: xx-large;
     animation: grow 2s;
+}
+
+div#right {
+    flex: 1;
 }

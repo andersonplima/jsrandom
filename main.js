@@ -3,14 +3,19 @@ let pessoas_length;
 function generatePessoasList(pessoasText) {
     const pessoas_container = document.getElementById("pessoas_container");
     pessoas_container.innerHTML = "";
+    const sorteados_container = document.getElementById("sorteados_container");
+    sorteados_container.innerHTML = "";
     const pessoas = pessoasText.split(/\r\n|\r|\n/);
-    const ul = document.createElement("ul");
-    pessoas_container.appendChild(ul);
+    const ul_pessoas = document.createElement("ul");
+    pessoas_container.appendChild(ul_pessoas);
+    const ul_sorteados = document.createElement("ul");
+    sorteados_container.appendChild(ul_sorteados);    
+    
     pessoas_length = 0;
     pessoas.forEach(nome => {
         const li = document.createElement("li");
         li.innerText = nome;
-        ul.appendChild(li);
+        ul_pessoas.appendChild(li);
         pessoas_length++;
     });
 }
@@ -38,16 +43,22 @@ function handlePessoasInputFileChange(e) {
     }
 }
 
+function transferPessoaSorteada(pessoa_sorteada) {
+    console.log('todo');
+}
+
 function sortear(deceive_count) {
     const sorteio = Math.floor(Math.random() * pessoas_length);
     const pessoas_itens = document.querySelectorAll("div#pessoas_container li");
     let pessoa_sorteada = pessoas_itens[sorteio];
     pessoa_sorteada.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     if (deceive_count > 0) {
-        setTimeout(() => sortear(deceive_count - 1), 1000);
+        setTimeout(() => sortear(deceive_count - 1), 500);
     } else {
         pessoa_sorteada.setAttribute("class", "big");
-        pessoa_sorteada.innerText += " ⬅️";
+        pessoa_sorteada.innerText += " 🎆";
+        pessoas_length--;
+        setTimeout(() => tranferPessoaSorteada(pessoa_sorteada), 1000);
     }
 }
 
