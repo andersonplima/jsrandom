@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sorteio aleatório de pessoas</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="top">
+            <h1 class="title">Vsoft • Sorteio aleatório de pessoas</h1>
+        </div>
+        <div id="bottom">
+            <div id="left">
+                <div id="fileload_container">
+                    <h2>Pessoas</h2>
+                    <span class="hint">Carregue um arquivo com os nomes dos sorteáveis, um em cada linha do
+                        arquivo</span>
+                    <input type="file" name="pessoas_inputfile" id="pessoas_inputfile" accept="text/*" />
+                    <span id="pessoas_inputfilestats"></span>
+                </div>
+                <button id="sortear_button" disabled>Sortear</button>
+                <div id="pessoas_container">
+                </div>                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
