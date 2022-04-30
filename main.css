@@ -18,13 +18,22 @@ div#main {
     width: 95vw;
     display: flex;
     flex-direction: column;
+    border: 1px solid #21283a;
 }
 
 div#top {
     display: flex;
     flex: 1;
     height: 10vh;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#21283a;
+    color: #eee;
+    padding: 0 1em;
+}
+
+img#logo {
+    height: 50px;
 }
 
 div#bottom {
